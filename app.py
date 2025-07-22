@@ -36,7 +36,7 @@ st.markdown(
 )
 
 # Ley de Malus
-with st.expander("🔬 Demostración Interactiva de la Ley de Malus", expanded=True):
+with st.expander("Demostración Interactiva de la Ley de Malus", expanded=True):
     st.markdown(
         r"""
     La Ley de Malus describe cómo la intensidad (o probabilidad de transmisión de un fotón)
@@ -150,7 +150,7 @@ if start_simulation:
 
 # Conclusión
 st.markdown("---")
-st.header("💡 Conclusiones")
+st.header("Conclusiones")
 st.markdown(
     """
     * **Ley de Malus:** explica la probabilidad de detección cuando las bases no coinciden.
