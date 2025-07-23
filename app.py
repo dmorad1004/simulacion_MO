@@ -148,7 +148,7 @@ if start_simulation:
         qber = (alice_key != bob_key).mean() * 100
         st.metric("QBER (Tasa de error)", f"{qber:.2f}%")
         if is_eve_present and qber > 0:
-            st.error("Eve detectada: QBER > 0%")
+            st.error("MeowEve detectada: QBER > 0%")
         elif is_eve_present:
             st.info(
                 "MeowEve no introdujo errores detectables en esta muestra (poco probable a gran escala)."
