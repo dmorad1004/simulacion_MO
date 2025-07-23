@@ -26,22 +26,32 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.title("⚛️ Simulación del Protocolo BB84 y la Ley de Malus")
+st.title("⚛️ Simulación del Protocolo BB84")
 st.markdown(
     """
-    Esta aplicación de manera interactiva, demuestra el protocolo de criptografía cuántica **BB84** y su
-    relación con la **Ley de Malus**. Utiliza la polarización de fotones para establecer una
-    clave secreta segura entre dos partes (Gatalice y MichiBob).
+    Esta simulación interactiva demuestra el protocolo de criptografía cuántica **BB84** y su
+    relación con la **probabilidad de detección cuántica**. Utiliza la polarización de fotones 
+    para establecer una clave secreta segura entre dos partes: **Gatalice** y **MichiBob**.
     """
 )
 
-# Ley de Malus
-with st.expander("Demostración Interactiva de la Ley de Malus", expanded=True):
+# Probabilidad de detección
+with st.expander(
+    "Probabilidad de Detección según el Ángulo de Medición", expanded=True
+):
     st.markdown(
         r"""
-    La Ley de Malus describe cómo la intensidad (o probabilidad de transmisión de un fotón)
-    cambia según el ángulo entre la polarización incidente y el eje del polarizador:
-    $$ P(\theta) = \cos^2(\theta) $$
+    En el contexto del protocolo BB84, la **probabilidad de detección** de un fotón por un polarizador
+    depende del ángulo entre la dirección de polarización del fotón y la orientación del polarizador.
+    
+    Esta probabilidad está dada por la expresión:
+    $$
+    P(\theta) = \cos^2(\theta)
+    $$
+    donde $\theta$ es la diferencia angular entre la polarización del fotón y el eje del polarizador.
+
+    Esta ley probabilística es fundamental para comprender por qué, cuando las bases no coinciden, 
+    el resultado de la medición es aleatorio.
     """
     )
 
