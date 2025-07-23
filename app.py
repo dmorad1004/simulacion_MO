@@ -63,13 +63,15 @@ with st.expander(
             label=f"Probabilidad de transmisión para θ = {polarizer_angle}°",
             value=f"{probability:.2%}",
         )
-        if polarizer_angle % 90 == 0:
-            if polarizer_angle == 0:
-                st.success("Bases coinciden ⇒ transmisión 100 %.")
-            else:
-                st.error("Bases ortogonales ⇒ transmisión 0 %.")
-        elif polarizer_angle == 45:
-            st.info("Bases diagonales ⇒ probabilidad 50 %.")
+        if polarizer_angle == 0 or polarizer_angle == 180:
+            st.success("Bases alineadas ⇒ detección 100 %.")
+        elif polarizer_angle == 90:
+            st.error("Bases ortogonales ⇒ detección 0 %.")
+        elif polarizer_angle == 45 or polarizer_angle == 135:
+            st.info("Bases diagonales ⇒ detección 50 %.")
+        else:
+            st.info("Probabilidad de detección intermedia.")
+
 
 # Sidebar – Controles de la simulación BB84
 with st.sidebar:
@@ -77,7 +79,7 @@ with st.sidebar:
     num_bits = st.slider(
         "Número de fotones / bits a enviar:",
         min_value=4,
-        max_value=40,
+        max_value=100,
         value=12,
         step=2,
     )
