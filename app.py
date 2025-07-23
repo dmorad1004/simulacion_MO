@@ -160,13 +160,11 @@ if start_simulation:
 
 # Conclusión
 st.markdown("---")
-st.header("Conclusiones")
+st.header("Consideraciones")
 st.markdown(
     """
-    * **Ley de Malus:** explica la probabilidad de detección cuando las bases no coinciden.
-    * **Principio de no clonación:** Eve no puede copiar un qubit sin colapsar su estado; al
-      medir en la base errónea, introduce errores detectables.
-    * **BB84:** garantiza la detección de espionaje mediante la comparación pública de bases y
-      el cálculo del QBER.
+    * La **probabilidad de detección** de un fotón depende del ángulo entre la base en que fue preparado y la base en que se mide. Cuando las bases no coinciden, el resultado es impredecible.
+    * El **principio de no clonación cuántica** impide que un espía (MeowEve) copie el estado de un fotón sin alterar su comportamiento. Esto garantiza que cualquier intento de interceptación deje huella.
+    * El protocolo **BB84** permite a dos partes (como Gatalice y MichiBob) detectar la presencia de espionaje comparando públicamente sus bases y calculando la tasa de error (**QBER**).
     """
 )
